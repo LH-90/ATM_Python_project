@@ -27,9 +27,9 @@ The ATM simulation program provides the following features:
 To run the ATM simulation program, follow the steps below:
 
 - Open the script in Google Colab
-- Change the PIN number with a number of your choice
-- Change the balance amount with a number of your choice
-- Run the code
+- Change the PIN number to a number of your choice
+- Change the balance amount to a number of your choice
+- Run all the code
 - Start using the ATM by following the steps
 
 
