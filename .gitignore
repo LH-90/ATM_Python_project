@@ -1,0 +1,5 @@
+myenv/lib
+myenv/bin
+myenv/pyvenv.cfg
+src/__pycache__
+
