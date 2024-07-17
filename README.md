@@ -22,8 +22,8 @@ To run the ATM simulation program, follow the steps below:
 - Clone the repo on your local machine
 - Setup a virtual environment: `python3 -m venv myenv`
 - Activate the virtual environment: `source myenv/bin/activate`
-- Change the PIN number to a number of your choice in **main.py**
-- Change the balance amount to a number of your choice in **main.py**
+- Optional: Change the PIN in the atm object in **main.py**
+- Optional: Change the balance in the atm object in **main.py**
 - Run the code: `python main.py`
 - Start using the ATM by following the steps
 
