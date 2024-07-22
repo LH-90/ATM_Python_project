@@ -88,7 +88,7 @@ class ATM:
         print("6: 100£")
         print("7: Other amount")
 
-        input_number = int(input("Enter an amount: (1-7)"))
+        input_number = int(input("Enter an option: (1-7)"))
         numbers = [1, 2, 3, 4, 5, 6]  # Different options for the user to choose
         amounts = [10, 20, 30, 50, 80, 100]  # Amounts of money which correspond to the options
         numbers_amounts = dict(zip(numbers, amounts))  # Create a dictionary with "numbers: amounts" as a "key: value" pair
