@@ -6,7 +6,7 @@ class ATM:
         self.balance_user = balance_user
         self.attempts = 0
 
-    # Function to verify PIN
+
     def verify_pin(self):
 
         while self.attempts < 3:
@@ -27,7 +27,7 @@ class ATM:
             print("Your account has been locked.")  # After 3 incorrect attempts, the account is locked
 
 
-    # Function to display the main menu with different options for the user
+
     def main_menu(self):
       
       while True:
@@ -70,13 +70,13 @@ class ATM:
                 # Restart this loop
 
 
-    # Function to display the current balance amount
+    
     def display_balance(self):
 
         print(f"The current balance is: {self.balance_user}£.")
         return self.balance_user
 
-    # Function to display the different possibilities for the user to withdraw money
+    
     def withdraw(self):
 
         print("How much money would you like to withdraw?")
