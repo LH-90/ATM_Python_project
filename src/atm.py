@@ -19,7 +19,7 @@ class ATM:
                 return
 
             else:
-                self.attempts += 1  # If incorrect PIN entered by the user
+                self.attempts += 1  
                 if self.attempts < 3:
                     print("Invalid PIN. Please try again.")
 
@@ -91,17 +91,17 @@ class ATM:
         input_number = int(input("Enter an option: (1-7)"))
         numbers = [1, 2, 3, 4, 5, 6]  # Different options for the user to choose
         amounts = [10, 20, 30, 50, 80, 100]  # Amounts of money which correspond to the options
-        numbers_amounts = dict(zip(numbers, amounts))  # Create a dictionary with "numbers: amounts" as a "key: value" pair
+        numbers_amounts = dict(zip(numbers, amounts))  # Create a dictionary with "number: amount" as a "key: value" pair
 
         if input_number in numbers:  # If the user has typed a number which is in the numbers list
             amount = numbers_amounts[input_number]
             if amount <= self.balance_user:  # If the current balance is more than the amount the user wants to withdraw
                 self.balance_user -= amount  # The withdrawn amount is deducted from the current balance
-                print(f"{amount}£ has been withdrawn. The new balance is {self.balance_user}£.")  # Confirms that the amount has been withdrawn and displays the new balance
+                print(f"{amount}£ has been withdrawn. The new balance is {self.balance_user}£.")  
             else:
-                print(f"This amount cannot be withdrawn. You only have {self.balance_user}£ on your account.")  # The amount the user wants to withdraw is more than the current balance
+                print(f"This amount cannot be withdrawn. You only have {self.balance_user}£ on your account.")  
         elif input_number == 7:
-            self.withdraw_other_amount()  # Function call to withdraw another amount
+            self.withdraw_other_amount()  # Method call to withdraw another amount
         else:
             print("Invalid. Please enter a valid number.")
             self.withdraw()  # The withdraw menu will be displayed if the user enters an invalid number (out of 1-7)
@@ -111,17 +111,15 @@ class ATM:
 
         while True:
 
-            input_amount = int(input("Enter another amount: "))  # The user can type another amount
+            input_amount = int(input("Enter another amount: "))  
             if input_amount <= self.balance_user:  # If the current balance is more than the amount the user wants to withdraw
                 if input_amount > 0 and input_amount % 10 == 0:  # If the amount the user wants to withdraw is a positive number and a multiple of 10
                     self.balance_user -= input_amount  # The withdrawn amount is deducted from the current balance
-                    print(f"{input_amount}£ has been withdrawn. The new balance is {self.balance_user}£.")  # Confirms that the amount has been withdrawn and displays the new balance
-                    break
+                    print(f"{input_amount}£ has been withdrawn. The new balance is {self.balance_user}£.")  
                 else:
-                    print("This amount cannot be withdrawn. Try another one.")  # If the amount entered by the user is not a multiple of 10 or a negative number
+                    print("This amount cannot be withdrawn. Try another one.")  
             else:
-                print(f"This amount cannot be withdrawn. You have less than {input_amount} on your account.")  # The amount the user wants to withdraw is more than the current balance
-
+                print(f"This amount cannot be withdrawn. You have less than {input_amount} on your account.")  
 
     def deposit(self):
 
@@ -129,6 +127,6 @@ class ATM:
         input_deposit = int(input("Enter an amount: "))
         if input_deposit > 0 and input_deposit % 10 == 0:
             self.balance_user += input_deposit  # Adds the amount of the deposit
-            print(f"Thank you, your new balance is {self.balance_user}£.")  # Displays the new balance
+            print(f"Thank you, your new balance is {self.balance_user}£.")  
         else:
             print("This amount cannot be added to your account.")
