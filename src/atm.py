@@ -88,19 +88,19 @@ class ATM:
         print("6: 100£")
         print("7: Other amount")
 
-        input_amount = int(input("Enter an amount: (1-7)"))
+        input_number = int(input("Enter an amount: (1-7)"))
         numbers = [1, 2, 3, 4, 5, 6]  # Different options for the user to choose
         amounts = [10, 20, 30, 50, 80, 100]  # Amounts of money which correspond to the options
         numbers_amounts = dict(zip(numbers, amounts))  # Create a dictionary with "numbers: amounts" as a "key: value" pair
 
-        if input_amount in numbers:  # If the user has typed a number which is in the numbers list
-            amount = numbers_amounts[input_amount]
+        if input_number in numbers:  # If the user has typed a number which is in the numbers list
+            amount = numbers_amounts[input_number]
             if amount <= self.balance_user:  # If the current balance is more than the amount the user wants to withdraw
                 self.balance_user -= amount  # The withdrawn amount is deducted from the current balance
                 print(f"{amount}£ has been withdrawn. The new balance is {self.balance_user}£.")  # Confirms that the amount has been withdrawn and displays the new balance
             else:
                 print(f"This amount cannot be withdrawn. You only have {self.balance_user}£ on your account.")  # The amount the user wants to withdraw is more than the current balance
-        elif input_amount == 7:
+        elif input_number == 7:
             self.withdraw_other_amount()  # Function call to withdraw another amount
         else:
             print("Invalid. Please enter a valid number.")
@@ -111,16 +111,16 @@ class ATM:
 
         while True:
 
-            input_amount2 = int(input("Enter another amount: "))  # The user can type another amount
-            if input_amount2 <= self.balance_user:  # If the current balance is more than the amount the user wants to withdraw
-                if input_amount2 > 0 and input_amount2 % 10 == 0:  # If the amount the user wants to withdraw is a positive number and a multiple of 10
-                    self.balance_user -= input_amount2  # The withdrawn amount is deducted from the current balance
-                    print(f"{input_amount2}£ has been withdrawn. The new balance is {self.balance_user}£.")  # Confirms that the amount has been withdrawn and displays the new balance
+            input_amount = int(input("Enter another amount: "))  # The user can type another amount
+            if input_amount <= self.balance_user:  # If the current balance is more than the amount the user wants to withdraw
+                if input_amount > 0 and input_amount % 10 == 0:  # If the amount the user wants to withdraw is a positive number and a multiple of 10
+                    self.balance_user -= input_amount  # The withdrawn amount is deducted from the current balance
+                    print(f"{input_amount}£ has been withdrawn. The new balance is {self.balance_user}£.")  # Confirms that the amount has been withdrawn and displays the new balance
                     break
                 else:
                     print("This amount cannot be withdrawn. Try another one.")  # If the amount entered by the user is not a multiple of 10 or a negative number
             else:
-                print(f"This amount cannot be withdrawn. You have less than {input_amount2} on your account.")  # The amount the user wants to withdraw is more than the current balance
+                print(f"This amount cannot be withdrawn. You have less than {input_amount} on your account.")  # The amount the user wants to withdraw is more than the current balance
 
 
     def deposit(self):
